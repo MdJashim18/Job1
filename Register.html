@@ -14,9 +14,9 @@
   </head>
   <body class="container">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Job</a>
+          <a class="navbar-brand" href="">Job</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -34,24 +34,62 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="Profile.html">Profile</a>
+              </li> -->
             </ul>
             <form class="d-flex">
-              <li class="nav-item">
+              <li class="nav-item" id="registerButton">
                 <a class="nav-link" href="Register.html">Register</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" id="loginButton">
                 <a class="nav-link" href="Login.html">Login</a>
+              </li>
+              <li class="nav-item" id="logoutButton" style="display: none;">
+                <a class="nav-link" href="#" onclick="logout()">Logout</a>
+              </li>
+              <li class="nav-item" id="profileButton" style="display: none;">
+                <a class="nav-link" href="Profile.html">Profile</a>
               </li>
             </form>
           </div>
         </div>
       </nav>
       
+      
 
       
     </header>
     <main>
-        <div class="login-container">
+      <h2 class="text-center">Please Register</h2>
+      <div class="form-container" >
+        
+        <form id="registration-form">
+            <input type="text" id="username" class="input" placeholder="Username" required><br>
+            <input type="text" id="first_name" class="input" placeholder="First Name" required><br>
+            <input type="text" id="last_name" class="input" placeholder="Last Name" required><br>
+            <input type="email" id="email" class="input" placeholder="Email" required><br>
+            <input type="password" id="password" class="input" placeholder="Password" required><br>
+            <input type="password" id="confirm_password" class="input" placeholder="Confirm Password" required><br>
+            
+            <!-- <label for="role">Select Role: </label> -->
+            <select id="role" class="input">
+                <option value="user">User</option>
+                <option value="employee">Employee</option>
+            </select><br><br>
+
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+        <p id="error" class="error"></p>
+        <div class="col-md-6">
+          <img class="w-100" src="./Images/login.png" alt="" />
+        </div>
+    </div>
+
+
+
+
+        <!-- <div class="login-container">
             <div class="col-md-6">
               <h1 class="title mt-5">Please Registration</h1>
               <form action="" onsubmit="handleRegistration(event)">
@@ -103,10 +141,8 @@
                 <p><a href="login.html">go to login page</a></p>
               </form>
             </div>
-            <div class="col-md-6">
-              <img class="w-100" src="./Images/login.png" alt="" />
-            </div>
-          </div>
+            
+          </div> -->
     </main>
 
     <footer class="p-5">

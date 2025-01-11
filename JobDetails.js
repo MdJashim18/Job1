@@ -1,7 +1,7 @@
-// Function to get URL parameters and fetch job details
+
 const getparams = () => {
     const param = new URLSearchParams(window.location.search).get("id");
-    console.log("Job ID:", param); // Check if ID is received correctly
+    console.log("Job ID:", param); 
     if (param) {
       fetch(`https://job-buop.onrender.com/Job_Listings/list/${param}`)
         .then((res) => res.json())
@@ -14,7 +14,7 @@ const getparams = () => {
 };
 
   
-  // Function to display job details dynamically
+
 const displayDetails = (job) => {
     const parent = document.getElementById("job_deatils");
     const div = document.createElement("div");
@@ -40,5 +40,5 @@ const displayDetails = (job) => {
     parent.appendChild(div);
 };
   
-  // Initialize the script
+
 getparams();
