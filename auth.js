@@ -73,6 +73,10 @@ const handleLogin = (event) => {
                     localStorage.setItem("token", data.token);
                     localStorage.setItem("role", data.role);
 
+                    // After successful login, update the profile button
+                    profile(); // Ensure the profile button is updated
+
+                    // Redirect based on role
                     if (data.role === "employee") {
                         window.location.href = "employee-profile.html";
                     } else {
@@ -91,3 +95,35 @@ const handleLogin = (event) => {
 // Attach event listeners
 // document.getElementById("registration-form").addEventListener("submit", handleRegistration);
 // document.getElementById("login-form").addEventListener("submit", handleLogin);
+
+
+
+
+
+
+// Profile Button Logic
+// Profile Button Logic
+const profile = () => {
+    const userRole = localStorage.getItem("role");
+    const profileButton = document.getElementById("profileButton");
+
+    if (profileButton) {
+        const link = profileButton.querySelector("a");
+
+        // Show profile button only if a user is logged in
+        if (userRole === "user") {
+            profileButton.style.display = "block";
+            link.setAttribute("href", "user-profile.html");
+            link.innerText = "User Profile";
+        } else if (userRole === "employee") {
+            profileButton.style.display = "block";
+            link.setAttribute("href", "employee-profile.html");
+            link.innerText = "Employee Profile";
+        } else {
+            profileButton.style.display = "none"; // Hide profile button if not logged in
+        }
+    }
+};
+
+// Call profile on page load and after login to update visibility
+profile();
