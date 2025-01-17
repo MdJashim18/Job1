@@ -1,24 +1,19 @@
-document.getElementById('jobForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-    
-    const formData = new FormData();
-    formData.append('title', document.getElementById('title').value);
-    formData.append('description', document.getElementById('description').value);
-    formData.append('requirements', document.getElementById('requirements').value);
-    formData.append('location', document.getElementById('location').value);
-    formData.append('company_image', document.getElementById('company_image').files[0]);
-    formData.append('categories', document.getElementById('categories').value);
-    
-    fetch('https://job-buop.onrender.com/Job_Listings/list/', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-      alert('Job posted successfully!');
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+const formEl = document.querySelector('.jobForm');
+
+formEl.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const formData = new FormData(formEl); // Correct capitalization
+  const data = Object.fromEntries(formData.entries()); // Fix data conversion
+  console.log(data); // Log the form data
+  fetch('https://job-buop.onrender.com/Job_Listings/list/',{
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+    },
+    body : JSON.stringify(data),
+  })
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(error => console.log(error));
 });
-  
