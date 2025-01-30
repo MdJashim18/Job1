@@ -42,7 +42,6 @@ const displayDetails = (job) => {
             <p class="card-text"><strong>Availability</strong>: ${availability}</p>
             <p class="card-text"><strong>Categories</strong>: ${categories}</p>
             
-            <a href="Apply.html?id=${job.id}" class="btn btn-primary">Apply Now</a>
           </div>
         </div>
       </div>

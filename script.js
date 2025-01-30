@@ -12,14 +12,20 @@ const display_Job = (services) => {
     console.error("Job-container element not found!");
     return;
   }
+ 
   parent.innerHTML = ""; 
   services.forEach((service) => {
+    const categories =
+      service.categories && service.categories.length > 0
+        ? service.categories.map((category) => category.name).join(", ")
+        : "No categories available for this job.";
     const li = document.createElement("li");
     li.innerHTML = `
       <div class="card shadow h-100">
         <div class="card-body p-3 p-xl-5">
           <h3 class="card-title h5">${service.title}</h3>
           <p class="card-text">${service.description.slice(0, 140)}</p>
+          <strong class="card-text"> ${categories} </strong><br>
           <a href="JobDetails.html?id=${service.id}" class="btn btn-primary">Details</a>
         </div>
       </div>`;

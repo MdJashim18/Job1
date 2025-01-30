@@ -32,6 +32,15 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
+              <div class="dropdown">
+                <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dashboard
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="user_dash">User</a></li>
+                  <li><a class="dropdown-item" href="employee_dash">Employee</a></li>
+                </ul>
+              </div>
               <!-- <li class="nav-item">
                 <a class="nav-link" href="Profile.html">Profile</a>
               </li> -->
@@ -66,6 +75,50 @@
         <div id="job_deatils" class="row mt-4">
             <!-- Job details will be dynamically inserted here -->
         </div>
+
+
+
+        <div class="container mt-5 mb-5">
+          <h2 class="text-center">Application Form</h2>
+          <form class="form">
+            <div class="mb-3">
+              <label for="job" class="form-label">Job</label>
+              <select class="form-select" id="job" name="job" required>
+                <option value="junior_dev" selected>Junior Developer at Tech Company</option>
+                <option value="assistant_dev">Assistant Developer at IT Company</option>
+                <option value="customer_care_tech">Customer Care at IT-Tech Company</option>
+                <option value="economics">Economics at Creative IT</option>
+                <option value="customer_care_it">Customer Care at IT Company</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="applicant" class="form-label">Applicant Name</label>
+              <input type="text" class="form-control" id="applicant" name="applicant_name" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone_number" required />
+            </div>
+            <div class="mb-3">
+              <label for="resume" class="form-label">Upload Resume</label>
+              <input type="file" class="form-control" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
+            </div>
+            <div class="mb-3">
+              <label for="status" class="form-label">Status</label>
+              <select class="form-select" id="status" name="status" required>
+                <option value="pending" selected>Pending</option>
+                <option value="accepted">Accepted</option>
+                <option value="rejected">Rejected</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          
+        </div>
     </main>
     <footer class="p-5">
       <div class="container w-75 m-auto row p-5">
@@ -97,6 +150,7 @@
     <script src="script.js"></script>
     <script src="JobDetails.js"></script>
     <script src="user_employe.js"></script>
+    <script src="Apply.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
